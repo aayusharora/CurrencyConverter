@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>Enter the value and choose your currency </h1>
+<div style="text-align:center">
+  <!-- <p>{{currencyVal}}</p> -->
+  <input type='text' value={{currentVal}} #inp >
+
+    <select class='form-control' (change)="convert(inp.value, $event.target.value)" [value]='46'>
+      <option  *ngFor='let i of buttons' value='{{i}}'>{{i}}</option>
+  </select>
+
+</div>
+<section >
+    <!--for demo wrap-->
+
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Currency</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr *ngFor='let i of getKeys()'>
+            <td>{{i}}</td>
+            <td>{{currencyVal[i]}} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+
+<router-outlet></router-outlet>
